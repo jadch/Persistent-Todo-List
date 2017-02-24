@@ -3,7 +3,7 @@ const React = require('react')
 const InputBar = React.createClass({
   render () {
     return (
-      <div className="header">
+      <div className="InputBar">
         <form>
           <input placeholder="Enter a new task"></input>
           <button type="submit">Add</button>

@@ -1,0 +1,17 @@
+
+body {
+  padding: 50px;
+  background-color: #EAE0C8;
+}
+
+.InputBar input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.InputBar button {
+  padding: 5px;
+  font-size: 16px;
+  min-width: 60px;
+  margin-left: 5px;
+}
