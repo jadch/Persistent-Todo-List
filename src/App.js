@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
+const InputBar = require('./InputBar')
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Hello world!</h2>
-        </div>
+        <InputBar/>
       </div>
     );
   }
