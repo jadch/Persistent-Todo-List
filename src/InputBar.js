@@ -1,4 +1,5 @@
 const React = require('react')
+const ListItems = require('./ListItems')
 
 const InputBar = React.createClass({
   getInitialState () {
@@ -17,11 +18,14 @@ const InputBar = React.createClass({
   },
   render () {
     return (
-      <div className="InputBar">
-        <form onSubmit={this.addTask}>
-          <input ref={(a) => this._inputElement = a} placeholder="Enter a new task"></input>
-          <button type="submit">Add</button>
-        </form>
+      <div className="TodoList">
+        <div className="InputBar">
+          <form onSubmit={this.addTask}>
+            <input ref={(a) => this._inputElement = a} placeholder="Enter a new task"></input>
+            <button type="submit">Add</button>
+          </form>
+        </div>
+        <ListItems tasks={this.state.TaskList}/>
       </div>
     )
   }
