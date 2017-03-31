@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
-const InputBar = require('./InputBar')
+const InputForm = require('./InputForm')
+const ListItems = require('./ListItems')
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <InputBar/>
+        <InputForm />
+        <ListItems />
       </div>
     );
   }
