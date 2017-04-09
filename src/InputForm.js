@@ -25,7 +25,7 @@ let InputForm = React.createClass({
 })
 
 InputForm = reduxForm({
-  form: 'LiveForm'
+  form: 'addForm'
 })(InputForm)
 
 module.exports = connector(InputForm)

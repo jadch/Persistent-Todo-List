@@ -5,7 +5,7 @@ import { reducer as formReducer} from 'redux-form'
 const ADD_TASK = 'addTask'
 
 const initialState = {
-  TaskList: []
+  TaskList: ["buy milk", "buy eggz"]
 }
 
 const rootReducer = (state=initialState, action) => {
