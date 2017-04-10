@@ -3,8 +3,9 @@ const { connector } = require('./store')
 
 import { Field, reduxForm } from 'redux-form'
 
-const Edit = (reset, props) => {
+const Edit = (editTask, reset, props) => {
   console.log("Edit success")
+  editTask(props.newItem, 1)
   reset()
 }
 
@@ -16,7 +17,7 @@ let EditComponent = React.createClass({
     return (
       <div>
         <div className="InputBar">
-          <form onSubmit={handleSubmit(Edit.bind(this, reset))}>
+          <form onSubmit={handleSubmit(Edit.bind(this, this.props.editTask, reset))}>
             <div>
               <Field name="newItem" component="input" placeholder={old_version}/>
             </div>
