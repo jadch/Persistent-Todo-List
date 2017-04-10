@@ -4,13 +4,19 @@ const { connector } = require('./store')
 const ListItems = React.createClass({
   render () {
     const TaskArray = this.props.TaskList
-    const TaskArrayHTML = TaskArray.map( (item) => (
-      <li>{item}</li>
-    ))
+    const HTMLify = (array) => {
+      var ArrayHTML = []
+      for (let i = 0; i < array.length; i++) {
+          ArrayHTML.push(
+            <li>{array[i]}</li>
+          )
+      }
+      return ArrayHTML
+    }
 
     return(
       <ul className="TaskList">
-        {TaskArrayHTML}
+        {HTMLify(TaskArray)}
       </ul>
     )
   }
