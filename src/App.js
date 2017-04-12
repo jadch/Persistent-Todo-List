@@ -10,7 +10,6 @@ class App extends Component {
       <div className="App">
         <InputForm />
         <ListItems />
-        <EditComponent itemIndex="1" />
       </div>
     );
   }
