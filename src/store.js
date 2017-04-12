@@ -6,7 +6,18 @@ const ADD_TASK = 'addTask'
 const EDIT_TASK = 'editTask'
 
 const initialState = {
-  TaskList: ["buy milk", "buy eggz"]
+  TaskList: ["buy milk", "buy eggz"],
+  Tasks: {
+    1: {
+      text: "buy milk",
+      showEdit: false
+    },
+    2: {
+      text: "buy eggz",
+      showEdit: true
+    }
+  },
+  TaskCount: 2
 }
 
 const rootReducer = (state=initialState, action) => {
