@@ -10,10 +10,12 @@ const initialState = {
   Tasks: {
     0: {
       text: "buy milk",
+      completed: false,
       showEdit: false
     },
     1: {
       text: "buy eggz",
+      completed: false,
       showEdit: true
     }
   },
@@ -38,6 +40,7 @@ const reduceAddTask = (state, action) => {
   newState.TaskCount = state.TaskCount + 1
   newState.Tasks[newState.TaskCount] = {
     text: action.value,
+    completed: false,
     showEdit: false
   }
   return newState
