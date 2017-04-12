@@ -8,16 +8,16 @@ const EDIT_TASK = 'editTask'
 const initialState = {
   TaskList: ["buy milk", "buy eggz"],
   Tasks: {
-    1: {
+    0: {
       text: "buy milk",
       showEdit: false
     },
-    2: {
+    1: {
       text: "buy eggz",
       showEdit: true
     }
   },
-  TaskCount: 2
+  TaskCount: 1
 }
 
 const rootReducer = (state=initialState, action) => {
@@ -65,6 +65,7 @@ const store = redux.createStore(reducer, redux.compose(
 const mapStateToProps = (state) => {
   return {
     TaskList: state.main.TaskList,
+    Tasks: state.main.Tasks,
     FormElem: state.form
   }
 }

@@ -1,5 +1,6 @@
 const React = require('react')
 const { connector } = require('./store')
+const EditComponent = require('./EditComponent')
 
 const ListItems = React.createClass({
   render () {
@@ -8,7 +9,10 @@ const ListItems = React.createClass({
       var ArrayHTML = []
       for (let i = 0; i < array.length; i++) {
           ArrayHTML.push(
-            <li>{array[i]}</li>
+            <div>
+              <li>{array[i]}</li>
+              {this.props.Tasks[i].showEdit ? <EditComponent itemIndex="1" /> : ""}
+            </div>
           )
       }
       return ArrayHTML
