@@ -35,6 +35,11 @@ const reduceAddTask = (state, action) => {
   let newState =  {}
   Object.assign(newState, state)
   newState.TaskList.push(action.value)
+  newState.TaskCount = state.TaskCount + 1
+  newState.Tasks[newState.TaskCount] = {
+    text: action.value,
+    showEdit: false
+  }
   return newState
 }
 
