@@ -14,7 +14,7 @@ let InputForm = React.createClass({
       <div className='InputBar'>
         <form onSubmit={handleSubmit(showResults.bind(this, this.props.addTask, reset))}>
           <div>
-            <Field name='newItem' component='input' placeholder='Add a new task' />
+            <Field name='newItem' component='input' autoComplete='off' placeholder='Add a new task' />
           </div>
           <button type='submit' disabled={pristine || submitting} >Add</button>
         </form>

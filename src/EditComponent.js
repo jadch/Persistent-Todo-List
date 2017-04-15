@@ -16,7 +16,7 @@ let EditComponent = React.createClass({
         <div className='InputBar'>
           <form onSubmit={handleSubmit(Edit.bind(this, this.props.editTask, this.props.itemIndex, reset))}>
             <div>
-              <Field name='newItem' component='input' placeholder={oldTask} />
+              <Field name='newItem' component='input' autoComplete='off' placeholder={oldTask} />
             </div>
             <button type='submit' disabled={submitting} >Edit</button>
           </form>
