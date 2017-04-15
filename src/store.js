@@ -45,7 +45,9 @@ const reduceEditTask = (state, action) => {
 }
 
 const reduceToggleEdit = (state, action) => {
-  let newEditList = state.EditList.slice()
+  let newEditList = []
+  newEditList.length = state.EditList.length
+  newEditList.fill(false)
   newEditList[action.index] = !action.currentValue
   return {...state, EditList: newEditList}
 }
