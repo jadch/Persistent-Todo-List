@@ -1,7 +1,13 @@
 
-body {
+Body {
   padding: 50px;
   background-color: #C8D2EA;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .InputBar input {
@@ -12,14 +18,19 @@ body {
 .InputBar button {
   padding: 5px;
   font-size: 16px;
-  min-width: 60px;
+  min-width: 70px;
   margin-left: 5px;
+  background-color: #7f55d4;
+  color: white;
+  border: none;
+  border-radius: 5%;
 }
 
 .TaskList {
   list-style: none;
   padding-left: 0;
   width: 255px;
+  justify-content: center;
 }
 
 .TaskList li {

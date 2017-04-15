@@ -8,7 +8,7 @@ const TOGGLE_EDIT = 'toggleEdit'
 
 const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
-  EditList: [true, false],
+  EditList: [false, false],
   CompleteList: [false, false],
   TaskCount: 1
 }
