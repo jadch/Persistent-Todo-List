@@ -4,21 +4,12 @@ import { reducer as formReducer} from 'redux-form'
 
 const ADD_TASK = 'addTask'
 const EDIT_TASK = 'editTask'
+const TOGGLE_EDIT = 'toggleEdit'
 
 const initialState = {
   TaskList: ["buy milk", "buy eggz"],
-  Tasks: {
-    0: {
-      text: "buy milk",
-      completed: false,
-      showEdit: false
-    },
-    1: {
-      text: "buy eggz",
-      completed: false,
-      showEdit: true
-    }
-  },
+  EditList: [true, false],
+  CompleteList: [false, false],
   TaskCount: 1
 }
 
@@ -28,6 +19,8 @@ const rootReducer = (state=initialState, action) => {
       return reduceAddTask(state, action)
     case EDIT_TASK:
       return reduceEditTask(state, action)
+    case TOGGLE_EDIT:
+      return reduceToggleEdit(state, action)
     default:
       return state
   }
@@ -54,6 +47,12 @@ const reduceEditTask = (state, action) => {
   return newState
 }
 
+const reduceToggleEdit = (state, action) => {
+  let newEditList = state.EditList.slice()
+  newEditList[action.index] = !action.currentValue
+  return {...state, EditList: newEditList}
+}
+
 const reducers = {
   main: rootReducer,
   form: formReducer
@@ -68,7 +67,7 @@ const store = redux.createStore(reducer, redux.compose(
 const mapStateToProps = (state) => {
   return {
     TaskList: state.main.TaskList,
-    Tasks: state.main.Tasks,
+    EditList: state.main.EditList,
     FormElem: state.form
   }
 }
@@ -80,6 +79,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     editTask: (newTask, index) => {
       dispatch({type: EDIT_TASK, value: newTask, index: index})
+    },
+    toggleEdit: (currentValue, index) => {
+      dispatch({type: TOGGLE_EDIT, currentValue: currentValue, index: index})
     }
 }}
 

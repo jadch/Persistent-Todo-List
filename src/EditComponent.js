@@ -13,7 +13,6 @@ let EditComponent = React.createClass({
   render() {
     const old_version = this.props.TaskList[this.props.itemIndex]
     const { handleSubmit, reset, pristine, submitting } = this.props
-
     return (
       <div>
         <div className="InputBar">
