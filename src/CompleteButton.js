@@ -2,8 +2,8 @@ import { reduxForm } from 'redux-form'
 const React = require('react')
 const { connector } = require('./store')
 
-const complete = (completeTask, itemIndex) => {
-  completeTask(itemIndex)
+const complete = (completeTask, itemIndex, itemValue) => {
+  completeTask(itemIndex, itemValue)
 }
 
 let CompleteButton = React.createClass({
@@ -11,7 +11,7 @@ let CompleteButton = React.createClass({
     const { handleSubmit, submitting } = this.props
     return (
       <div className='CompleteButton'>
-        <form onSubmit={handleSubmit(complete.bind(this, this.props.completeTask, this.props.itemIndex))}>
+        <form onSubmit={handleSubmit(complete.bind(this, this.props.completeTask, this.props.item.index, this.props.item.value))}>
           <button type='submit' disabled={submitting}>Complete</button>
         </form>
       </div>

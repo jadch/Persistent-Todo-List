@@ -9,6 +9,7 @@ const COMPLETE_TASK = 'completeTask'
 
 const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
+  CompletedTaskList: [],
   EditList: [false, false],
   CompleteList: [false, false],
   TaskCount: 1
@@ -57,8 +58,12 @@ const reduceToggleEdit = (state, action) => {
 
 const reduceCompleteTask = (state, action) => {
   let newCompleteList = state.CompleteList.slice()
+  let newCompletedTaskList = state.CompletedTaskList.slice()
+  let newTaskList = state.TaskList.slice()
   newCompleteList[action.index] = true
-  return {...state, CompleteList: newCompleteList}
+  newCompletedTaskList.push(action.value)
+  newTaskList.splice(action.index, 1)
+  return {...state, CompleteList: newCompleteList, TaskList: newTaskList, CompletedTaskList: newCompletedTaskList}
 }
 
 const reducers = {
@@ -75,6 +80,7 @@ const store = redux.createStore(reducer, redux.compose(
 const mapStateToProps = (state) => {
   return {
     TaskList: state.main.TaskList,
+    CompletedTaskList: state.main.CompletedTaskList,
     EditList: state.main.EditList,
     CompleteList: state.main.CompleteList,
     FormElem: state.form
@@ -92,8 +98,8 @@ const mapDispatchToProps = (dispatch) => {
     toggleEdit: (currentValue, index) => {
       dispatch({type: TOGGLE_EDIT, currentValue: currentValue, index: index})
     },
-    completeTask: (index) => {
-      dispatch({type: COMPLETE_TASK, index: index})
+    completeTask: (index, value) => {
+      dispatch({type: COMPLETE_TASK, index: index, value: value})
     }
   }
 }

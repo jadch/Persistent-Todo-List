@@ -15,7 +15,7 @@ const ListItems = React.createClass({
         ArrayHTML.push(
           <div>
             <li onClick={this.toggleEditFunc.bind(this, this.props.toggleEdit, this.props.EditList[i], i)}>{array[i]}</li>
-            <div>{this.props.EditList[i] ? <div><EditComponent itemIndex={i} /> <CompleteButton itemIndex={i} /></div> : ''}</div>
+            <div>{this.props.EditList[i] ? <div><EditComponent itemIndex={i} /> <CompleteButton item={{index: i, value: array[i]}} /></div> : ''}</div>
           </div>
         )
       }
