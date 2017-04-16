@@ -1,6 +1,7 @@
 const React = require('react')
 const { connector } = require('./store')
 const EditComponent = require('./EditComponent')
+const CompleteButton = require('./CompleteButton')
 
 const ListItems = React.createClass({
   toggleEditFunc: (toggleEdit, currentValue, i) => {
@@ -14,7 +15,7 @@ const ListItems = React.createClass({
         ArrayHTML.push(
           <div>
             <li onClick={this.toggleEditFunc.bind(this, this.props.toggleEdit, this.props.EditList[i], i)}>{array[i]}</li>
-            <div>{this.props.EditList[i] ? <EditComponent itemIndex={i} /> : ''}</div>
+            <div>{this.props.EditList[i] ? <div><EditComponent itemIndex={i} /> <CompleteButton itemIndex={i} /></div> : ''}</div>
           </div>
         )
       }

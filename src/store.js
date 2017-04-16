@@ -5,6 +5,7 @@ const reactRedux = require('react-redux')
 const ADD_TASK = 'addTask'
 const EDIT_TASK = 'editTask'
 const TOGGLE_EDIT = 'toggleEdit'
+const COMPLETE_TASK = 'completeTask'
 
 const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
@@ -21,6 +22,8 @@ const rootReducer = (state = initialState, action) => {
       return reduceEditTask(state, action)
     case TOGGLE_EDIT:
       return reduceToggleEdit(state, action)
+    case COMPLETE_TASK:
+      return reduceCompleteTask(state, action)
     default:
       return state
   }
@@ -52,6 +55,12 @@ const reduceToggleEdit = (state, action) => {
   return {...state, EditList: newEditList}
 }
 
+const reduceCompleteTask = (state, action) => {
+  let newCompleteList = state.CompleteList.slice()
+  newCompleteList[action.index] = true
+  return {...state, CompleteList: newCompleteList}
+}
+
 const reducers = {
   main: rootReducer,
   form: formReducer
@@ -67,6 +76,7 @@ const mapStateToProps = (state) => {
   return {
     TaskList: state.main.TaskList,
     EditList: state.main.EditList,
+    CompleteList: state.main.CompleteList,
     FormElem: state.form
   }
 }
@@ -81,6 +91,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     toggleEdit: (currentValue, index) => {
       dispatch({type: TOGGLE_EDIT, currentValue: currentValue, index: index})
+    },
+    completeTask: (index) => {
+      dispatch({type: COMPLETE_TASK, index: index})
     }
   }
 }

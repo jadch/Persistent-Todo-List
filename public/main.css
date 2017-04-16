@@ -15,7 +15,7 @@ Body {
   font-size: 16px;
 }
 
-.InputBar button {
+.InputBar button, .CompleteButton button {
   padding: 5px;
   font-size: 16px;
   min-width: 70px;
