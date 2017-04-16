@@ -11,7 +11,6 @@ const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
   CompletedTaskList: ['testing', 'buy bills'],
   EditList: [false, false],
-  CompleteList: [false, false],
   TaskCount: 1
 }
 
@@ -35,7 +34,6 @@ const reduceAddTask = (state, action) => {
   Object.assign(newState, state)
   newState.TaskList.push(action.value)
   newState.EditList.push(false)
-  newState.CompleteList.push(false)
   newState.TaskCount = state.TaskCount + 1
   return newState
 }
@@ -57,13 +55,11 @@ const reduceToggleEdit = (state, action) => {
 }
 
 const reduceCompleteTask = (state, action) => {
-  let newCompleteList = state.CompleteList.slice()
   let newCompletedTaskList = state.CompletedTaskList.slice()
   let newTaskList = state.TaskList.slice()
-  newCompleteList[action.index] = true
   newCompletedTaskList.push(action.value)
   newTaskList.splice(action.index, 1)
-  return {...state, CompleteList: newCompleteList, TaskList: newTaskList, CompletedTaskList: newCompletedTaskList}
+  return {...state, TaskList: newTaskList, CompletedTaskList: newCompletedTaskList}
 }
 
 const reducers = {
@@ -82,7 +78,6 @@ const mapStateToProps = (state) => {
     TaskList: state.main.TaskList,
     CompletedTaskList: state.main.CompletedTaskList,
     EditList: state.main.EditList,
-    CompleteList: state.main.CompleteList,
     FormElem: state.form
   }
 }
