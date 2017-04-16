@@ -57,9 +57,12 @@ const reduceToggleEdit = (state, action) => {
 const reduceCompleteTask = (state, action) => {
   let newCompletedTaskList = state.CompletedTaskList.slice()
   let newTaskList = state.TaskList.slice()
+  let newEditList = []
   newCompletedTaskList.push(action.value)
   newTaskList.splice(action.index, 1)
-  return {...state, TaskList: newTaskList, CompletedTaskList: newCompletedTaskList}
+  newEditList.length = newTaskList.length
+  newEditList.fill(false)
+  return {...state, EditList: newEditList, TaskList: newTaskList, CompletedTaskList: newCompletedTaskList}
 }
 
 const reducers = {
