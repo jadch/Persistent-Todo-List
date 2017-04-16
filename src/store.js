@@ -9,7 +9,7 @@ const COMPLETE_TASK = 'completeTask'
 
 const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
-  CompletedTaskList: [],
+  CompletedTaskList: ['testing', 'buy bills'],
   EditList: [false, false],
   CompleteList: [false, false],
   TaskCount: 1
