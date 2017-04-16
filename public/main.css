@@ -35,6 +35,8 @@ Body {
 
 .TaskList li {
   background-color: #EAE0C8;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 5px;
@@ -43,7 +45,17 @@ Body {
 .CompleteTaskList li {
   background-color: rgba(234, 224, 200, 0.5);
   text-decoration: line-through;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 5px;
+}
+
+.Complete h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin: 30px auto 15px auto;
 }
