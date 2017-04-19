@@ -11,9 +11,9 @@ const TOGGLECOMPLETE_EDIT = 'toggleCompleteEdit'
 
 const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
-  CompletedTaskList: ['testing', 'buy bills'],
+  CompletedTaskList: ['testing', 'pay bills'],
   EditList: [false, false],
-  ToggleComplete: [true, false],
+  ToggleComplete: [false, false],
   TaskCount: 1
 }
 
@@ -65,11 +65,14 @@ const reduceCompleteTask = (state, action) => {
   let newCompletedTaskList = state.CompletedTaskList.slice()
   let newTaskList = state.TaskList.slice()
   let newEditList = []
+  let newToggleComplete = []
   newCompletedTaskList.push(action.value)
   newTaskList.splice(action.index, 1)
   newEditList.length = newTaskList.length
   newEditList.fill(false)
-  return {...state, EditList: newEditList, TaskList: newTaskList, CompletedTaskList: newCompletedTaskList}
+  newToggleComplete.length = newCompletedTaskList.length
+  newToggleComplete.fill(false)
+  return {...state, EditList: newEditList, TaskList: newTaskList, CompletedTaskList: newCompletedTaskList, ToggleComplete: newToggleComplete}
 }
 
 const reduceUncompleteTask = (state, action) => {
