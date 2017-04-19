@@ -15,7 +15,7 @@ const CompleteTasks = React.createClass({
           <div>
             <li onClick={this.toggleEditFunc.bind(this, this.props.toggleCompleteEdit, this.props.ToggleComplete[i], i)}>{array[i]}</li>
             <div>{this.props.ToggleComplete[i] ? <UncompleteButton item={{index: i, value: array[i]}} /> : ''}</div>
-        </div>
+          </div>
         )
       }
       return ArrayHTML
