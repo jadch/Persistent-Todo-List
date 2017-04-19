@@ -6,11 +6,13 @@ const ADD_TASK = 'addTask'
 const EDIT_TASK = 'editTask'
 const TOGGLE_EDIT = 'toggleEdit'
 const COMPLETE_TASK = 'completeTask'
+const UNCOMPLETE_TASK = 'uncompleteTask'
 
 const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
   CompletedTaskList: ['testing', 'buy bills'],
   EditList: [false, false],
+  ToggleComplete: [true, false],
   TaskCount: 1
 }
 
@@ -24,6 +26,8 @@ const rootReducer = (state = initialState, action) => {
       return reduceToggleEdit(state, action)
     case COMPLETE_TASK:
       return reduceCompleteTask(state, action)
+    case UNCOMPLETE_TASK:
+      return reduceUncompleteTask(state, action)
     default:
       return state
   }
@@ -65,6 +69,17 @@ const reduceCompleteTask = (state, action) => {
   return {...state, EditList: newEditList, TaskList: newTaskList, CompletedTaskList: newCompletedTaskList}
 }
 
+const reduceUncompleteTask = (state, action) => {
+  let newCompletedTaskList = state.CompletedTaskList.slice()
+  let newTaskList = state.TaskList.slice()
+  let newToggleComplete = []
+  newCompletedTaskList.splice(action.index, 1)
+  newTaskList.push(action.value)
+  newToggleComplete.length = newCompletedTaskList.length
+  newToggleComplete.fill(false)
+  return {...state, CompletedTaskList: newCompletedTaskList, TaskList: newTaskList, ToggleComplete: newToggleComplete}
+}
+
 const reducers = {
   main: rootReducer,
   form: formReducer
@@ -81,6 +96,7 @@ const mapStateToProps = (state) => {
     TaskList: state.main.TaskList,
     CompletedTaskList: state.main.CompletedTaskList,
     EditList: state.main.EditList,
+    ToggleComplete: state.main.ToggleComplete,
     FormElem: state.form
   }
 }
@@ -98,6 +114,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     completeTask: (index, value) => {
       dispatch({type: COMPLETE_TASK, index: index, value: value})
+    },
+    uncompleteTask: (index, value) => {
+      dispatch({type: UNCOMPLETE_TASK, index: index, value: value})
     }
   }
 }
