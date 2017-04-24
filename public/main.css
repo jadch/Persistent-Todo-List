@@ -10,15 +10,34 @@ Body {
   align-items: center;
 }
 
-.InputBar input {
+.InputBar input, .MainInputBar input {
   padding: 5px;
   font-size: 16px;
+  height: 25px;
+}
+
+.MainInputBar input {
+  width: 250px;
+  margin-bottom: 7px;
+}
+
+.MainInputBar button {
+  padding: 5px;
+  font-size: 16px;
+  width: 80px;
+  height: 40px;
+  margin-left: 10px;
+  background-color: #7f55d4;
+  color: white;
+  border: none;
+  border-radius: 5%;
 }
 
 .InputBar button, .CompleteButton button {
   padding: 5px;
   font-size: 16px;
   min-width: 70px;
+  height: 35px;
   margin-left: 5px;
   background-color: #7f55d4;
   color: white;
@@ -29,8 +48,12 @@ Body {
 .TaskList, .CompleteTaskList {
   list-style: none;
   padding-left: 0;
-  width: 255px;
+  width: 375px;
   justify-content: center;
+}
+
+.TaskList div {
+  margin-bottom: 2px;
 }
 
 .TaskList li {
@@ -58,4 +81,21 @@ Body {
   font-weight: 400;
   font-size: 1.5em;
   margin: 30px auto 15px auto;
+}
+
+.Flex-Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.UnCompleteButton button {
+  padding: 5px;
+  font-size: 16px;
+  min-width: 70px;
+  height: 35px;
+  margin-left: 5px;
+  background-color: #7f55d4;
+  color: white;
+  border: none;
+  border-radius: 5%;
 }

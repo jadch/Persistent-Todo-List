@@ -14,7 +14,7 @@ let EditComponent = React.createClass({
     return (
       <div>
         <div className='InputBar'>
-          <form onSubmit={handleSubmit(Edit.bind(this, this.props.editTask, this.props.itemIndex, reset))}>
+          <form className='Flex-Row' onSubmit={handleSubmit(Edit.bind(this, this.props.editTask, this.props.itemIndex, reset))}>
             <div>
               <Field name='newItem' component='input' autoComplete='off' placeholder={oldTask} />
             </div>

@@ -10,7 +10,7 @@ let UncompleteButton = React.createClass({
   render () {
     const { handleSubmit, submitting } = this.props
     return (
-      <div className='CompleteButton'>
+      <div className='UnCompleteButton'>
         <form onSubmit={handleSubmit(uncomplete.bind(this, this.props.uncompleteTask, this.props.item.index, this.props.item.value))}>
           <button type='submit' disabled={submitting}>Mark Uncomplete</button>
         </form>

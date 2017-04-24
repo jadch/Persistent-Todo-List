@@ -11,8 +11,8 @@ let InputForm = React.createClass({
   render () {
     const { handleSubmit, pristine, submitting, reset } = this.props
     return (
-      <div className='InputBar'>
-        <form onSubmit={handleSubmit(showResults.bind(this, this.props.addTask, reset))}>
+      <div className='MainInputBar'>
+        <form onSubmit={handleSubmit(showResults.bind(this, this.props.addTask, reset))} className='Flex-Row'>
           <div>
             <Field name='newItem' component='input' autoComplete='off' placeholder='Add a new task' />
           </div>
