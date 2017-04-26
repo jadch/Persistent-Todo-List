@@ -45,6 +45,18 @@ Body {
   border-radius: 5%;
 }
 
+.Title h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.Title {
+  margin-bottom: 25px;
+  margin-right: 80%;
+  min-width: 175px;
+
+}
+
 .TaskList, .CompleteTaskList {
   list-style: none;
   padding-left: 0;
