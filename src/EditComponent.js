@@ -10,7 +10,7 @@ const Edit = (editTask, index, reset, props) => {
 let EditComponent = React.createClass({
   render () {
     const oldTask = this.props.TaskList[this.props.itemIndex]
-    const { handleSubmit, reset, submitting } = this.props
+    const { handleSubmit, reset, submitting, pristine } = this.props
     return (
       <div>
         <div className='InputBar'>
@@ -18,7 +18,7 @@ let EditComponent = React.createClass({
             <div>
               <Field name='newItem' component='input' autoComplete='off' placeholder={oldTask} />
             </div>
-            <button type='submit' disabled={submitting} >Edit</button>
+            <button type='submit' disabled={pristine || submitting} >Edit</button>
           </form>
         </div>
       </div>
