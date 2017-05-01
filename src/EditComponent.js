@@ -7,10 +7,18 @@ const Edit = (editTask, index, reset, props) => {
   reset()
 }
 
+const validate = (values) => {
+  const errors = {}
+  if (values.newItem && values.newItem.match(/^\s+$/) != null) {
+    errors.newItem = 'Cannot be blank'
+  }
+  return errors
+}
+
 let EditComponent = React.createClass({
   render () {
     const oldTask = this.props.TaskList[this.props.itemIndex]
-    const { handleSubmit, reset, submitting, pristine } = this.props
+    const { handleSubmit, reset, submitting, pristine, invalid } = this.props
     return (
       <div>
         <div className='InputBar'>
@@ -18,7 +26,7 @@ let EditComponent = React.createClass({
             <div>
               <Field name='newItem' component='input' autoComplete='off' placeholder={oldTask} />
             </div>
-            <button type='submit' disabled={pristine || submitting} >Edit</button>
+            <button type='submit' disabled={invalid || pristine || submitting} >Edit</button>
           </form>
         </div>
       </div>
@@ -27,7 +35,8 @@ let EditComponent = React.createClass({
 })
 
 EditComponent = reduxForm({
-  form: 'editForm'
+  form: 'editForm',
+  validate
 })(EditComponent)
 
 module.exports = connector(EditComponent)
