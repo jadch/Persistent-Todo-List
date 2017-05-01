@@ -7,16 +7,24 @@ const showResults = (addTask, reset, props) => {
   reset()
 }
 
+const validate = (values) => {
+  const errors = {}
+  if (values.newItem && values.newItem.match(/^\s+$/) != null) {
+    errors.newItem = 'Cannot be blank'
+  }
+  return errors
+}
+
 let InputForm = React.createClass({
   render () {
-    const { handleSubmit, pristine, submitting, reset } = this.props
+    const { handleSubmit, pristine, submitting, reset, invalid } = this.props
     return (
       <div className='MainInputBar'>
         <form onSubmit={handleSubmit(showResults.bind(this, this.props.addTask, reset))} className='Flex-Row'>
           <div>
             <Field name='newItem' component='input' autoComplete='off' placeholder='Add a new task' />
           </div>
-          <button type='submit' disabled={pristine || submitting} >Add</button>
+          <button type='submit' disabled={invalid || pristine || submitting} >Add</button>
         </form>
       </div>
     )
@@ -24,7 +32,8 @@ let InputForm = React.createClass({
 })
 
 InputForm = reduxForm({
-  form: 'addForm'
+  form: 'addForm',
+  validate
 })(InputForm)
 
 module.exports = connector(InputForm)
