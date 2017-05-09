@@ -1,4 +1,5 @@
 import { reducer as formReducer } from 'redux-form'
+import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase'
 const redux = require('redux')
 const reactRedux = require('react-redux')
 
@@ -8,6 +9,15 @@ const TOGGLE_EDIT = 'toggleEdit'
 const COMPLETE_TASK = 'completeTask'
 const UNCOMPLETE_TASK = 'uncompleteTask'
 const TOGGLECOMPLETE_EDIT = 'toggleCompleteEdit'
+
+const config = {
+  apiKey: "AIzaSyBtRcXsIDYJ3EDnnQ8tw3uFBognc2XW67Y",
+  authDomain: "todo-list-67a7b.firebaseapp.com",
+  databaseURL: "https://todo-list-67a7b.firebaseio.com",
+  projectId: "todo-list-67a7b",
+  storageBucket: "todo-list-67a7b.appspot.com",
+  messagingSenderId: "486254664276"
+}
 
 const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
@@ -96,13 +106,15 @@ const reduceToggleCompleteEdit = (state, action) => {
 
 const reducers = {
   main: rootReducer,
-  form: formReducer
+  form: formReducer,
+  firebase: firebaseStateReducer
 }
 
 const reducer = redux.combineReducers(reducers)
 
 const store = redux.createStore(reducer, redux.compose(
-  typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f
+  (typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f),
+  reactReduxFirebase(config, { userProfile: 'users' })
 ))
 
 const mapStateToProps = (state) => {
