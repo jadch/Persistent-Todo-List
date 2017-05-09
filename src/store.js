@@ -1,5 +1,6 @@
 import { reducer as formReducer } from 'redux-form'
 import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase'
+import thunk from 'redux-thunk'
 const redux = require('redux')
 const reactRedux = require('react-redux')
 
@@ -10,14 +11,10 @@ const COMPLETE_TASK = 'completeTask'
 const UNCOMPLETE_TASK = 'uncompleteTask'
 const TOGGLECOMPLETE_EDIT = 'toggleCompleteEdit'
 
-const config = {
-  apiKey: "AIzaSyBtRcXsIDYJ3EDnnQ8tw3uFBognc2XW67Y",
-  authDomain: "todo-list-67a7b.firebaseapp.com",
-  databaseURL: "https://todo-list-67a7b.firebaseio.com",
-  projectId: "todo-list-67a7b",
-  storageBucket: "todo-list-67a7b.appspot.com",
-  messagingSenderId: "486254664276"
-}
+const middleware = [ thunk ]
+const enhancers = []
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux.compose
+
 
 const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
@@ -106,16 +103,12 @@ const reduceToggleCompleteEdit = (state, action) => {
 
 const reducers = {
   main: rootReducer,
-  form: formReducer,
-  firebase: firebaseStateReducer
+  form: formReducer
 }
 
 const reducer = redux.combineReducers(reducers)
 
-const store = redux.createStore(reducer, redux.compose(
-  (typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f),
-  reactReduxFirebase(config, { userProfile: 'users' })
-))
+const store = redux.createStore(reducer, composeEnhancers(redux.applyMiddleware(...middleware), ...enhancers))
 
 const mapStateToProps = (state) => {
   return {

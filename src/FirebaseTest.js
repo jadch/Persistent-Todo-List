@@ -1,11 +1,11 @@
 const React = require('react')
 const { connector } = require('./store')
-
+import { database } from './firebase.js'
 
 const FirebaseTest = React.createClass({
   render () {
     const handleAdd = () => {
-      database.push('/todos', { text:'hey firebase', done:false })
+      database.ref('/').push('hey firebase!')
     }
     
     return (
