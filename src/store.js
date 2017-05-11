@@ -1,4 +1,6 @@
 import { reducer as formReducer } from 'redux-form'
+import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase'
+import thunk from 'redux-thunk'
 const redux = require('redux')
 const reactRedux = require('react-redux')
 
@@ -8,6 +10,11 @@ const TOGGLE_EDIT = 'toggleEdit'
 const COMPLETE_TASK = 'completeTask'
 const UNCOMPLETE_TASK = 'uncompleteTask'
 const TOGGLECOMPLETE_EDIT = 'toggleCompleteEdit'
+
+const middleware = [ thunk ]
+const enhancers = []
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux.compose
+
 
 const initialState = {
   TaskList: ['buy milk', 'buy eggz'],
@@ -101,9 +108,7 @@ const reducers = {
 
 const reducer = redux.combineReducers(reducers)
 
-const store = redux.createStore(reducer, redux.compose(
-  typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f
-))
+const store = redux.createStore(reducer, composeEnhancers(redux.applyMiddleware(...middleware), ...enhancers))
 
 const mapStateToProps = (state) => {
   return {

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 const InputForm = require('./InputForm')
 const ListItems = require('./ListItems')
 const CompleteTasks = require('./CompleteTasks')
+const FirebaseTest = require('./FirebaseTest')
 
 class App extends Component {
   render () {
@@ -14,6 +15,7 @@ class App extends Component {
         <InputForm />
         <ListItems />
         <CompleteTasks />
+        <FirebaseTest />
       </div>
     )
   }
