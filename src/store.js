@@ -3,6 +3,7 @@ import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase'
 import thunk from 'redux-thunk'
 const redux = require('redux')
 const reactRedux = require('react-redux')
+import reduceAddTask from './reducers/reduceAddTask'
 
 const ADD_TASK = 'addTask'
 const EDIT_TASK = 'editTask'
@@ -41,15 +42,6 @@ const rootReducer = (state = initialState, action) => {
     default:
       return state
   }
-}
-
-const reduceAddTask = (state, action) => {
-  let newState = {}
-  Object.assign(newState, state)
-  newState.TaskList.push(action.value)
-  newState.EditList.push(false)
-  newState.TaskCount = state.TaskCount + 1
-  return newState
 }
 
 const reduceEditTask = (state, action) => {
