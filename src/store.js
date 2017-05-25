@@ -11,6 +11,7 @@ const TOGGLE_EDIT = 'toggleEdit'
 const COMPLETE_TASK = 'completeTask'
 const UNCOMPLETE_TASK = 'uncompleteTask'
 const TOGGLECOMPLETE_EDIT = 'toggleCompleteEdit'
+const UPDATE_REDUXSTATE = 'updateReduxState'
 
 const middleware = [ thunk ]
 const enhancers = []
@@ -39,9 +40,17 @@ const rootReducer = (state = initialState, action) => {
       return reduceUncompleteTask(state, action)
     case TOGGLECOMPLETE_EDIT:
       return reduceToggleCompleteEdit(state, action)
+    case UPDATE_REDUXSTATE:
+      return reduceUpdateReduxState(state, action)
     default:
       return state
   }
+}
+
+const reduceUpdateReduxState = (state, action) => {
+  let newState = {}
+  Object.assign(newState, state)
+  return newState
 }
 
 const reduceEditTask = (state, action) => {
