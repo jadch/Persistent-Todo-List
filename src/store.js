@@ -50,7 +50,9 @@ const rootReducer = (state = initialState, action) => {
 const reduceUpdateReduxState = (state, action) => {
   let newState = {}
   Object.assign(newState, state)
-  newState.TaskList = ['im', 'working']
+  newState.TaskList = action.TaskList
+  newState.EditList = action.EditList
+  newState.TaskCount = action.TaskCount
   return newState
 }
 
