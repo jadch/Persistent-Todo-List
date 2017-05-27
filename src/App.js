@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connector } from './store.js'
 
 const InputForm = require('./InputForm')
 const ListItems = require('./ListItems')
@@ -23,4 +24,4 @@ class App extends Component {
   }
 }
 
-export default App
+module.exports = connector(App)
