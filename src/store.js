@@ -4,6 +4,7 @@ import thunk from 'redux-thunk'
 const redux = require('redux')
 const reactRedux = require('react-redux')
 import reduceAddTask from './reducers/reduceAddTask'
+import reduceEditTask from './reducers/reduceEditTask'
 
 const ADD_TASK = 'addTask'
 const EDIT_TASK = 'editTask'
@@ -56,13 +57,6 @@ const reduceUpdateReduxState = (state, action) => {
   return newState
 }
 
-const reduceEditTask = (state, action) => {
-  let newState = {}
-  let index = action.index
-  Object.assign(newState, state)
-  newState.TaskList[index] = action.value
-  return newState
-}
 
 const reduceToggleEdit = (state, action) => {
   let newEditList = []
