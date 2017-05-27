@@ -1,6 +1,6 @@
 import { database } from '../firebase.js'
 
-const startListeningForChanges = () => {
+const startListeningForListChanges = () => {
   return (dispatch) => {
     database.ref('/').on('value', (snapshot) => {
       console.log('change!')
@@ -19,4 +19,4 @@ const updateReduxState = (snapshot) => {
   }
 }
 
-export default startListeningForChanges
+export default startListeningForListChanges

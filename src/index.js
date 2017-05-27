@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import App from './App'
 import { store } from './store'
-import startListeningForChanges from './listeners/startListeningForChanges.js'
+import startListeningForListChanges from './listeners/startListeningForListChanges.js'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -12,4 +12,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-store.dispatch(startListeningForChanges())
+store.dispatch(startListeningForListChanges())
