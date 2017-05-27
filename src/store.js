@@ -6,6 +6,7 @@ const reactRedux = require('react-redux')
 import reduceAddTask from './reducers/reduceAddTask'
 import reduceEditTask from './reducers/reduceEditTask'
 import reduceCompleteTask from './reducers/reduceCompleteTask'
+import reduceUncompleteTask from './reducers/reduceUncompleteTask'
 
 const ADD_TASK = 'addTask'
 const EDIT_TASK = 'editTask'
@@ -65,17 +66,6 @@ const reduceToggleEdit = (state, action) => {
   newEditList.fill(false)
   newEditList[action.index] = !action.currentValue
   return {...state, EditList: newEditList}
-}
-
-const reduceUncompleteTask = (state, action) => {
-  let newCompletedTaskList = state.CompletedTaskList.slice()
-  let newTaskList = state.TaskList.slice()
-  let newToggleComplete = []
-  newCompletedTaskList.splice(action.index, 1)
-  newTaskList.push(action.value)
-  newToggleComplete.length = newCompletedTaskList.length
-  newToggleComplete.fill(false)
-  return {...state, CompletedTaskList: newCompletedTaskList, TaskList: newTaskList, ToggleComplete: newToggleComplete}
 }
 
 const reduceToggleCompleteEdit = (state, action) => {
