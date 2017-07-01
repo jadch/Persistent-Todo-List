@@ -12,6 +12,10 @@ const startListeningForAuthChanges = () => {
 
 const signedIn = (user) => {
   console.log(user.displayName)
+  return {
+    type: 'updateAuthState',
+    currentUser: user
+  }
 }
 
 export default startListeningForAuthChanges

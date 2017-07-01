@@ -15,6 +15,7 @@ const COMPLETE_TASK = 'completeTask'
 const UNCOMPLETE_TASK = 'uncompleteTask'
 const TOGGLECOMPLETE_EDIT = 'toggleCompleteEdit'
 const UPDATE_REDUXSTATE = 'updateReduxState'
+const UPDATE_AUTH_STATE = 'updateAuthState'
 
 const middleware = [ thunk ]
 const enhancers = []
@@ -26,6 +27,7 @@ const initialState = {
   CompletedTaskList: ['testing', 'pay bills'],
   EditList: [false, false],
   ToggleComplete: [false, false],
+  currentUser: '',
   TaskCount: 1
 }
 
@@ -45,6 +47,8 @@ const rootReducer = (state = initialState, action) => {
       return reduceToggleCompleteEdit(state, action)
     case UPDATE_REDUXSTATE:
       return reduceUpdateReduxState(state, action)
+    case UPDATE_AUTH_STATE:
+      return reduceUpdateAuthState(state, action)
     default:
       return state
   }
@@ -59,6 +63,12 @@ const reduceUpdateReduxState = (state, action) => {
   return newState
 }
 
+const reduceUpdateAuthState = (state, action) => {
+  let newState = {}
+  Object.assign(newState, state)
+  newState.currentUser = action.currentUser
+  return newState
+}
 
 const reduceToggleEdit = (state, action) => {
   let newEditList = []
