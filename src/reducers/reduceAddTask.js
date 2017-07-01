@@ -11,13 +11,13 @@ const reduceAddTask = (state, action) => {
 
   // Updating firebase
   const uid = state.currentUser.uid
-  const TaskList_ref = database.ref(uid + '/TaskList')
-  const EditList_ref = database.ref(uid + '/EditList')
-  const TaskCount_ref = database.ref(uid + '/TaskCount')
-
-  TaskList_ref.set(newState.TaskList)
-  EditList_ref.set(newState.EditList)
-  TaskCount_ref.set(newState.TaskCount)
+  database.ref(uid).set({
+    TaskList: newState.TaskList,
+    CompletedTaskList: newState.CompletedTaskList,
+    EditList: newState.EditList,
+    ToggleComplete: newState.ToggleComplete,
+    TaskCount: newState.TaskCount
+  })
 
   return newState
 }
