@@ -1,15 +1,22 @@
 import { database } from '../firebase.js'
 
-const TaskList_ref = database.ref('TaskList')
-
 const reduceEditTask = (state, action) => {
   // Updating local redux state
   let newState = {}
   let index = action.index
   Object.assign(newState, state)
   newState.TaskList[index] = action.value
+
   // Updating Firebase
-  TaskList_ref.set(newState.TaskList)
+  const uid = state.currentUser.uid
+  database.ref(uid).set({
+    TaskList: newState.TaskList,
+    CompletedTaskList: newState.CompletedTaskList,
+    EditList: newState.EditList,
+    ToggleComplete: newState.ToggleComplete,
+    TaskCount: newState.TaskCount
+  })
+
   return newState
 }
 
