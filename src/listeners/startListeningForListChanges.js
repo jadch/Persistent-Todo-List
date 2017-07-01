@@ -15,10 +15,7 @@ const updateReduxState = (snapshot) => {
   return {
     type: 'updateReduxState',
     TaskList: snapshot.TaskList,
-    CompletedTaskList: snapshot.CompletedTaskList,
-    EditList: snapshot.EditList,
-    ToggleComplete: snapshot.ToggleComplete,
-    TaskCount: snapshot.TaskCount
+    CompletedTaskList: snapshot.CompletedTaskList
   }
 }
 

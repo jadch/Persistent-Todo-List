@@ -59,9 +59,6 @@ const reduceUpdateReduxState = (state, action) => {
   Object.assign(newState, state)
   newState.TaskList = action.TaskList
   newState.CompletedTaskList =action.CompletedTaskList
-  newState.EditList = action.EditList
-  newState.ToggleComplete = action.ToggleComplete
-  newState.TaskCount = action.TaskCount
   return newState
 }
 

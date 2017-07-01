@@ -13,10 +13,7 @@ const reduceAddTask = (state, action) => {
   const uid = state.currentUser.uid
   database.ref(uid).set({
     TaskList: newState.TaskList,
-    CompletedTaskList: newState.CompletedTaskList,
-    EditList: newState.EditList,
-    ToggleComplete: newState.ToggleComplete,
-    TaskCount: newState.TaskCount
+    CompletedTaskList: newState.CompletedTaskList
   })
 
   return newState
