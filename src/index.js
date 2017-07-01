@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import App from './App'
 import { store } from './store'
 import startListeningForListChanges from './listeners/startListeningForListChanges.js'
+import startListeningForAuthChanges from './listeners/startListeningForAuthChanges'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -13,3 +14,4 @@ ReactDOM.render(
 )
 
 store.dispatch(startListeningForListChanges())
+store.dispatch(startListeningForAuthChanges())
