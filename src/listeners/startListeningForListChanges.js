@@ -1,8 +1,10 @@
 import { database } from '../firebase.js'
+import { auth } from '../firebase.js'
 
 const startListeningForListChanges = () => {
   return (dispatch) => {
-    database.ref('/').on('value', (snapshot) => {
+    let uid = auth.currentUser.uid
+    database.ref(uid).on('value', (snapshot) => {
       console.log('change!')
       dispatch(updateReduxState(snapshot.val()))
     })
@@ -10,11 +12,12 @@ const startListeningForListChanges = () => {
 }
 
 const updateReduxState = (snapshot) => {
-  console.log('update')
   return {
     type: 'updateReduxState',
     TaskList: snapshot.TaskList,
+    CompletedTaskList: snapshot.CompletedTaskList,
     EditList: snapshot.EditList,
+    ToggleComplete: snapshot.ToggleComplete,
     TaskCount: snapshot.TaskCount
   }
 }

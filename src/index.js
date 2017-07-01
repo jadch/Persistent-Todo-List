@@ -5,6 +5,7 @@ import App from './App'
 import { store } from './store'
 import startListeningForListChanges from './listeners/startListeningForListChanges.js'
 import startListeningForAuthChanges from './listeners/startListeningForAuthChanges'
+import { auth } from './firebase.js'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -13,5 +14,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-store.dispatch(startListeningForListChanges())
 store.dispatch(startListeningForAuthChanges())
