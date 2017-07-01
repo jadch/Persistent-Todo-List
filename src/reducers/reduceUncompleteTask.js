@@ -15,9 +15,14 @@ const reduceUncompleteTask = (state, action) => {
   newToggleComplete.fill(false)
 
   // Updating Firebase
-  TaskList_ref.set(newTaskList)
-  CompletedTaskList_ref.set(newCompletedTaskList)
-
+  const uid = state.currentUser.uid
+  database.ref(uid).set({
+    TaskList: newTaskList,
+    CompletedTaskList: newCompletedTaskList,
+    EditList: state.EditList,
+    ToggleComplete: newToggleComplete,
+    TaskCount: state.TaskCount
+  })
   return {...state, CompletedTaskList: newCompletedTaskList, TaskList: newTaskList, ToggleComplete: newToggleComplete}
 }
 
