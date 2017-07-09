@@ -6,7 +6,7 @@ const complete = (completeTask, itemIndex, itemValue) => {
   completeTask(itemIndex, itemValue)
 }
 
-let CompleteButton = React.createClass({
+class CompleteButton extends React.Component{
   render () {
     const { handleSubmit, submitting } = this.props
     return (
@@ -17,7 +17,7 @@ let CompleteButton = React.createClass({
       </div>
     )
   }
-})
+}
 
 CompleteButton = reduxForm({
   form: 'completeForm'

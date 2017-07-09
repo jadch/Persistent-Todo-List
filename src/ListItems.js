@@ -3,10 +3,10 @@ const { connector } = require('./store')
 const EditComponent = require('./EditComponent')
 const CompleteButton = require('./CompleteButton')
 
-const ListItems = React.createClass({
-  toggleEditFunc: (toggleEdit, currentValue, i) => {
+class ListItems extends React.Component {
+  toggleEditFunc(toggleEdit, currentValue, i) {
     toggleEdit(currentValue, i)
-  },
+  }
   render () {
     const TaskArray = this.props.TaskList
     const HTMLify = (array) => {
@@ -28,6 +28,6 @@ const ListItems = React.createClass({
       </ul>
     )
   }
-})
+}
 
 module.exports = connector(ListItems)

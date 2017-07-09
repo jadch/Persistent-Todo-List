@@ -7,7 +7,7 @@ const SignInAction = () => {
   auth.signInWithPopup(googleAuthProvider)
 }
 
-let SignInComponent = React.createClass({
+class SignInComponent extends React.Component {
   render () {
     return(
       <div className='SignInComponent' onClick={SignInAction}>
@@ -16,6 +16,6 @@ let SignInComponent = React.createClass({
         </button>
       </div>
     )}
-})
+}
 
 module.exports = connector(SignInComponent)

@@ -15,7 +15,7 @@ const validate = (values) => {
   return errors
 }
 
-let InputForm = React.createClass({
+class InputForm extends React.Component {
   render () {
     const { handleSubmit, pristine, submitting, reset, invalid } = this.props
     return (
@@ -29,7 +29,7 @@ let InputForm = React.createClass({
       </div>
     )
   }
-})
+}
 
 InputForm = reduxForm({
   form: 'addForm',

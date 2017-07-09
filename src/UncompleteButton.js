@@ -6,7 +6,7 @@ const uncomplete = (uncompleteTask, itemIndex, itemValue) => {
   uncompleteTask(itemIndex, itemValue)
 }
 
-let UncompleteButton = React.createClass({
+class UncompleteButton extends React.Component {
   render () {
     const { handleSubmit, submitting } = this.props
     return (
@@ -17,7 +17,7 @@ let UncompleteButton = React.createClass({
       </div>
     )
   }
-})
+}
 
 UncompleteButton = reduxForm({
   form: 'completeForm'

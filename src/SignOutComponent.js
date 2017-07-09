@@ -7,7 +7,7 @@ const SignOutAction = () => {
   auth.signOut()
 }
 
-let SignOutComponent = React.createClass({
+class SignOutComponent extends React.Component {
   render () {
     return(
       <div className='SignOutComponent' onClick={SignOutAction}>
@@ -16,6 +16,6 @@ let SignOutComponent = React.createClass({
         </button>
       </div>
     )}
-})
+}
 
 module.exports = connector(SignOutComponent)

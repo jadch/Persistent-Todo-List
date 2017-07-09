@@ -2,10 +2,11 @@ const React = require('react')
 const { connector } = require('./store')
 const UncompleteButton = require('./UncompleteButton')
 
-const CompleteTasks = React.createClass({
-  toggleEditFunc: (toggleCompleteEdit, currentValue, i) => {
+class CompleteTasks extends React.Component{
+  toggleEditFunc (toggleCompleteEdit, currentValue, i) {
     toggleCompleteEdit(currentValue, i)
-  },
+  }
+
   render () {
     const completeTaskArray = this.props.CompletedTaskList
     const HTMLify = (array) => {
@@ -30,6 +31,6 @@ const CompleteTasks = React.createClass({
       </div>
     )
   }
-})
+}
 
 module.exports = connector(CompleteTasks)

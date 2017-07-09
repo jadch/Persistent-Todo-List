@@ -15,7 +15,7 @@ const validate = (values) => {
   return errors
 }
 
-let EditComponent = React.createClass({
+class EditComponent extends React.Component {
   render () {
     const oldTask = this.props.TaskList[this.props.itemIndex]
     const { handleSubmit, reset, submitting, pristine, invalid } = this.props
@@ -32,7 +32,7 @@ let EditComponent = React.createClass({
       </div>
     )
   }
-})
+}
 
 EditComponent = reduxForm({
   form: 'editForm',
