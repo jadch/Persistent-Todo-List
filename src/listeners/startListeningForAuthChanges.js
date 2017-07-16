@@ -8,15 +8,24 @@ const startListeningForAuthChanges = () => {
         dispatch(signedIn(user))
         dispatch(startListeningForListChanges())
       }
+      else {
+        dispatch(signedOut())
+      }
     })
   }
 }
 
 const signedIn = (user) => {
-  console.log(user.displayName)
   return {
     type: 'updateAuthState',
     currentUser: user
+  }
+}
+
+const signedOut = () => {
+  return {
+    type: 'updateAuthState',
+    currentUser: ''
   }
 }
 
