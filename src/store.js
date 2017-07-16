@@ -100,7 +100,8 @@ const mapStateToProps = (state) => {
     CompletedTaskList: state.main.CompletedTaskList,
     EditList: state.main.EditList,
     ToggleComplete: state.main.ToggleComplete,
-    FormElem: state.form
+    FormElem: state.form,
+    currentUser: state.main.currentUser
   }
 }
 

@@ -6,6 +6,7 @@ const ListItems = require('./ListItems')
 const CompleteTasks = require('./CompleteTasks')
 const SignInComponent = require('./SignInComponent')
 const SignOutComponent = require('./SignOutComponent')
+const User = require('./User')
 
 class App extends Component {
   render () {
@@ -14,6 +15,7 @@ class App extends Component {
         <div className='Title'>
           <h1>To-Do List</h1>
         </div>
+        <User />
         <InputForm />
         <ListItems />
         <CompleteTasks />
