@@ -5,11 +5,13 @@ const InputForm = require('./InputForm')
 const ListItems = require('./ListItems')
 const CompleteTasks = require('./CompleteTasks')
 const AuthButton = require('./AuthButton')
+const UserBar = require('./UserBar')
 
 class App extends Component {
   render () {
     return (
       <div className='App'>
+        <UserBar />
         <AuthButton />
         <div className='Title'>
           <h1>To-Do List</h1>
