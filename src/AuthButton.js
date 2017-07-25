@@ -3,7 +3,7 @@ import { connector } from './store'
 import SignInComponent from './SignInComponent'
 import SignOutComponent from './SignOutComponent'
 
-class User extends React.Component {
+class AuthButton extends React.Component {
   render () {
   let user = this.props.currentUser
   let HTMLify = user ? <SignOutComponent /> : <SignInComponent />
@@ -16,4 +16,4 @@ class User extends React.Component {
   }
 }
 
-module.exports = connector(User)
+module.exports = connector(AuthButton)
