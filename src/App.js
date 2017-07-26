@@ -11,8 +11,10 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <UserBar />
-        <AuthButton />
+        <div className='MenuTopBar'>
+          <AuthButton />
+          <UserBar />
+        </div>
         <div className='Title'>
           <h1>To-Do List</h1>
         </div>
