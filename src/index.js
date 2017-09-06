@@ -6,10 +6,17 @@ import { store } from './store'
 import startListeningForListChanges from './listeners/startListeningForListChanges.js'
 import startListeningForAuthChanges from './listeners/startListeningForAuthChanges'
 import { auth } from './firebase.js'
+import {BrowserRouter as Router, Route } from 'react-router-dom'
+import LoginPage  from './LoginPage'
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <div>
+        <Route exact path='/' component={App} />
+        <Route exact path='/login' component={LoginPage} />
+      </div>
+    </Router>
   </Provider>,
   document.getElementById('root')
 )
