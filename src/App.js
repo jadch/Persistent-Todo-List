@@ -16,7 +16,7 @@ class App extends Component {
           <UserBar />
         </div>
         <div className='Title'>
-          <h1>To-Do List</h1>
+          <h1>Todoo List</h1>
         </div>
         <InputForm />
         <ListItems />

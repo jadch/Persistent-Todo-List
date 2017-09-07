@@ -7,7 +7,7 @@ Project styles:
 
 Body {
   padding: 50px;
-  background-color: #C8D2EA;
+  background-color: #f5f5f5;
 }
 
 .App {
@@ -33,7 +33,7 @@ Body {
   width: 80px;
   height: 40px;
   margin-left: 10px;
-  background-color: #7f55d4;
+  background-color: rgba(244, 67, 54, 0.85);
   color: white;
   border: none;
   border-radius: 5%;
@@ -45,7 +45,7 @@ Body {
   min-width: 70px;
   height: 35px;
   margin-left: 5px;
-  background-color: #7f55d4;
+  background-color: rgba(244, 67, 54, 0.85);
   color: white;
   border: none;
   border-radius: 5%;
@@ -75,22 +75,24 @@ Body {
 }
 
 .TaskList li {
-  background-color: #EAE0C8;
+  background-color: #fafafa;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 5px;
+  color: #5a5757;
 }
 
 .CompleteTaskList li {
-  background-color: rgba(234, 224, 200, 0.5);
+  background-color: #fafafa;
   text-decoration: line-through;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 5px;
+  color: #5a5757;
 }
 
 .Complete h2 {
@@ -112,7 +114,7 @@ Body {
   min-width: 70px;
   height: 35px;
   margin-left: 5px;
-  background-color: #7f55d4;
+  background-color: rgba(244, 67, 54, 0.85);
   color: white;
   border: none;
   border-radius: 5%;
@@ -134,7 +136,7 @@ Body {
   width: 100px;
   height: 25px;
   margin-right: 10px;
-  background-color: #7f55d4;
+  background-color: rgba(244, 67, 54, 0.85);
   color: white;
 }
 
