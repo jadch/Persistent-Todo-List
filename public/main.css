@@ -1,3 +1,9 @@
+/*
+Project styles:
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+*/
+
 
 Body {
   padding: 50px;
@@ -131,3 +137,7 @@ Body {
   background-color: #7f55d4;
   color: white;
 }
+
+/* ======================== */
+/*  Login Page Stylings     */
+/* ======================== */
