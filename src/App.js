@@ -7,6 +7,8 @@ const CompleteTasks = require('./CompleteTasks')
 const AuthButton = require('./AuthButton')
 const UserBar = require('./UserBar')
 
+import AppTitle from './TinyComponents/AppTitle.js'
+
 class App extends Component {
   render () {
     return (
@@ -15,9 +17,7 @@ class App extends Component {
           <AuthButton />
           <UserBar />
         </div>
-        <div className='Title'>
-          <h1>Todoo List</h1>
-        </div>
+        <AppTitle />
         <InputForm />
         <ListItems />
         <CompleteTasks />

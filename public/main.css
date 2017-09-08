@@ -51,12 +51,12 @@ Body {
   border-radius: 5%;
 }
 
-.Title h1 {
+.AppTitle h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
 
-.Title {
+.AppTitle {
   margin-bottom: 25px;
   margin-right: 80%;
   min-width: 175px;
@@ -143,3 +143,6 @@ Body {
 /* ======================== */
 /*  Login Page Stylings     */
 /* ======================== */
+.login-page {
+
+}
