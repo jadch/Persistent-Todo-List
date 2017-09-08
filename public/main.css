@@ -51,17 +51,26 @@ Body {
   border-radius: 5%;
 }
 
-.AppTitle h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-}
-
+/* ==================== */
+/*  AppTitle styling    */
+/* ==================== */
 .AppTitle {
   margin-bottom: 25px;
   margin-right: 80%;
   min-width: 175px;
 
 }
+
+.AppTitle h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #403d3d;
+}
+
+.AppTitle h1 span {
+  color: rgba(123, 119, 119, 0.9);
+}
+
 
 .TaskList, .CompleteTaskList {
   list-style: none;
