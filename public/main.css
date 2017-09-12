@@ -153,5 +153,11 @@ Body {
 /*  Login Page Stylings     */
 /* ======================== */
 .login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.column-A, .column-B {
+  margin: 0px 25px;
 }

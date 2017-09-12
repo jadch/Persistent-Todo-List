@@ -7,8 +7,8 @@ class LoginPage extends Component {
   render () {
     return (
       <div className='login-page'>
-        <AppTitle />
         <div className='column-A'>
+        <AppTitle />
           <img src="http://via.placeholder.com/450x500" />
         </div>
         <div className='column-B'>
