@@ -56,8 +56,8 @@ Body {
 /* ==================== */
 .AppTitle {
   margin-bottom: 25px;
-  margin-right: 80%;
   min-width: 175px;
+  align-self: flex-start;
 
 }
 
