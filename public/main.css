@@ -156,8 +156,28 @@ Body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .column-A, .column-B {
   margin: 0px 25px;
+  margin-bottom: 20px;
+}
+
+.login-page .AppTitle {
+  font-size: 1.3em;
+}
+
+.column-B h1 {
+  font-size: 1.8em;
+  font-weight: normal;
+}
+
+@media (max-width: 900px) {
+  .login-page {
+    display: flex;
+    flex-direction: column;
+  }
 }

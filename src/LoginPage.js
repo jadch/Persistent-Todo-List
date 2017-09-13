@@ -18,9 +18,9 @@ class LoginPage extends Component {
           <section className='features'>
             <p>Features :</p>
             <ul>
-              <li>ljkelddn</li>
-              <li>zdffd dvfd</li>
-              <li>feiclkbej kd</li>
+              <li>Clean Design</li>
+              <li>Syncs across devices</li>
+              <li>fillertext fillertext</li>
             </ul>
           </section>
         </div>
