@@ -13,11 +13,11 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <div className='MenuTopBar'>
-          <AuthButton />
+        <div className='NavBar'>
+          <AppTitle />
           <UserBar />
+          <AuthButton />
         </div>
-        <AppTitle />
         <InputForm />
         <ListItems />
         <CompleteTasks />
