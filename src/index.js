@@ -8,6 +8,7 @@ import startListeningForAuthChanges from './listeners/startListeningForAuthChang
 import { auth } from './firebase.js'
 import {BrowserRouter as Router, Route } from 'react-router-dom'
 import LoginPage  from './LoginPage'
+import Test from './testingPage'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -15,6 +16,7 @@ ReactDOM.render(
       <div>
         <Route exact path='/' component={App} />
         <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/testing' component={Test} />
       </div>
     </Router>
   </Provider>,
