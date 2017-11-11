@@ -23,12 +23,12 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux.co
 
 
 const initialState = {
-  TaskList: ['buy milk', 'buy eggz'],
-  CompletedTaskList: ['testing', 'pay bills'],
-  EditList: [false, false],
-  ToggleComplete: [false, false],
+  TaskList: [],
+  CompletedTaskList: [],
+  EditList: [],
+  ToggleComplete: [],
   currentUser: '',
-  TaskCount: 1
+  TaskCount: 0
 }
 
 const rootReducer = (state = initialState, action) => {
