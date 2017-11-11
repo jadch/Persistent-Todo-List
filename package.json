@@ -1,0 +1,21 @@
+{
+  "name": "todoo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd server && npm install",
+    "start": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadch/Persistent-Todo-List.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadch/Persistent-Todo-Listissues"
+  },
+  "homepage": "https://github.com/jadch/Persistent-Todo-List#readme"
+}
