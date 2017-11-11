@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/jadch/Persistent-Todo-Listissues"
   },
-  "homepage": "https://github.com/jadch/Persistent-Todo-List#readme"
+  "homepage": "https://github.com/jadch/Persistent-Todo-List#readme",
+  "standard": {
+    "ignore": [
+      "build/"
+    ]
+  }
 }
