@@ -2,7 +2,7 @@ const React = require('react')
 const { connector } = require('./store')
 const UncompleteButton = require('./UncompleteButton')
 
-class CompleteTasks extends React.Component{
+class CompleteTasks extends React.Component {
   toggleEditFunc (toggleCompleteEdit, currentValue, i) {
     toggleCompleteEdit(currentValue, i)
   }
@@ -20,6 +20,12 @@ class CompleteTasks extends React.Component{
         )
       }
       return ArrayHTML
+    }
+
+    if (completeTaskArray.length === 0) {
+      return (
+        <div></div>
+      )
     }
 
     return (

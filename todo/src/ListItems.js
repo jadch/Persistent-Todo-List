@@ -4,7 +4,7 @@ const EditComponent = require('./EditComponent')
 const CompleteButton = require('./CompleteButton')
 
 class ListItems extends React.Component {
-  toggleEditFunc(toggleEdit, currentValue, i) {
+  toggleEditFunc (toggleEdit, currentValue, i) {
     toggleEdit(currentValue, i)
   }
   render () {
@@ -20,6 +20,14 @@ class ListItems extends React.Component {
         )
       }
       return ArrayHTML
+    }
+
+    if (TaskArray.length === 0) {
+      return (
+        <div className='AllDone'>
+          <h1>Relax, you've got nothing to do right now :)</h1>
+        </div>
+      )
     }
 
     return (
