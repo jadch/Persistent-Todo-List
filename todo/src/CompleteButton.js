@@ -6,7 +6,7 @@ const complete = (completeTask, itemIndex, itemValue) => {
   completeTask(itemIndex, itemValue)
 }
 
-class CompleteButton extends React.Component{
+class CompleteButton extends React.Component {
   render () {
     const { handleSubmit, submitting } = this.props
     return (

@@ -9,13 +9,14 @@ const SignInAction = () => {
 
 class SignInComponent extends React.Component {
   render () {
-    return(
+    return (
       <div className='SignInComponent' onClick={SignInAction}>
         <button>
           Sign In
         </button>
       </div>
-    )}
+    )
+  }
 }
 
 module.exports = connector(SignInComponent)

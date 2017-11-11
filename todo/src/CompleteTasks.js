@@ -24,7 +24,7 @@ class CompleteTasks extends React.Component {
 
     if (completeTaskArray.length === 0) {
       return (
-        <div></div>
+        <div />
       )
     }
 

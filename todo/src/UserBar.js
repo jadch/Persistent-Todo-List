@@ -3,9 +3,9 @@ import { connector } from './store'
 
 class UserBar extends React.Component {
   render () {
-  let user = this.props.currentUser
+    let user = this.props.currentUser
 
-  return(
+    return (
       <div>
         <p>Hello, {user.displayName}!</p>
       </div>

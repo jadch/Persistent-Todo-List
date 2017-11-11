@@ -21,7 +21,6 @@ const middleware = [ thunk ]
 const enhancers = []
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux.compose
 
-
 const initialState = {
   TaskList: [],
   CompletedTaskList: [],
@@ -58,7 +57,7 @@ const reduceUpdateReduxState = (state, action) => {
   let newState = {}
   Object.assign(newState, state)
   newState.TaskList = action.TaskList
-  newState.CompletedTaskList =action.CompletedTaskList
+  newState.CompletedTaskList = action.CompletedTaskList
   return newState
 }
 

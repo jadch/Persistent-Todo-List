@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connector } from './store.js'
 
+import AppTitle from './TinyComponents/AppTitle.js'
+
 const InputForm = require('./InputForm')
 const ListItems = require('./ListItems')
 const CompleteTasks = require('./CompleteTasks')
 const AuthButton = require('./AuthButton')
 const UserBar = require('./UserBar')
-
-import AppTitle from './TinyComponents/AppTitle.js'
 
 class App extends Component {
   render () {

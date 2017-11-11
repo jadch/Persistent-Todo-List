@@ -9,13 +9,14 @@ const SignOutAction = () => {
 
 class SignOutComponent extends React.Component {
   render () {
-    return(
+    return (
       <div className='SignOutComponent' onClick={SignOutAction}>
         <button>
           Sign Out
         </button>
       </div>
-    )}
+    )
+  }
 }
 
 module.exports = connector(SignOutComponent)

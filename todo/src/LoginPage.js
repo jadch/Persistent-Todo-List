@@ -8,8 +8,8 @@ class LoginPage extends Component {
     return (
       <div className='login-page'>
         <div className='column-A'>
-        <AppTitle />
-          <img src="http://via.placeholder.com/450x500" />
+          <AppTitle />
+          <img src='http://via.placeholder.com/450x500' />
         </div>
         <div className='column-B'>
           <h1>Get More Stuff Done</h1>

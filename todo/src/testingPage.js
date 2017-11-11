@@ -10,17 +10,17 @@ import {
 import firebase from 'firebase'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render= {props => (
+  <Route {...rest} render={props => (
     console.log('*** USER ***', props.currentUser)
      (props.currentUser) ? (
-      <Component {...props}/>
+       <Component {...props} />
     ) : (
       <Redirect to={{
         pathname: '/login',
         state: { from: props.location }
-      }}/>
+      }} />
     )
-  )}/>
+  )} />
 )
 
 class Test extends Component {
@@ -31,11 +31,10 @@ class Test extends Component {
       return (
         <div>hey {user.displayName}</div>
       )
-    }
-    else {
-      return  (
-      <div>you are not signed in</div>
-    )
+    } else {
+      return (
+        <div>you are not signed in</div>
+      )
     }
   }
 }

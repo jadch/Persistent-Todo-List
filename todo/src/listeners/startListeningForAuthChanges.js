@@ -3,12 +3,11 @@ import startListeningForListChanges from './startListeningForListChanges.js'
 
 const startListeningForAuthChanges = () => {
   return (dispatch) => {
-    auth.onAuthStateChanged( (user) => {
+    auth.onAuthStateChanged((user) => {
       if (user) {
         dispatch(signedIn(user))
         dispatch(startListeningForListChanges())
-      }
-      else {
+      } else {
         dispatch(signedOut())
       }
     })

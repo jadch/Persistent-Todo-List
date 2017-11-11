@@ -7,7 +7,7 @@ import startListeningForListChanges from './listeners/startListeningForListChang
 import startListeningForAuthChanges from './listeners/startListeningForAuthChanges'
 import { auth } from './firebase.js'
 import {BrowserRouter as Router, Route } from 'react-router-dom'
-import LoginPage  from './LoginPage'
+import LoginPage from './LoginPage'
 import Test from './testingPage'
 import {
   Link,
@@ -16,20 +16,20 @@ import {
 } from 'react-router-dom'
 
 const isAuth = () => {
-  
+
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render= {props => (
+  <Route {...rest} render={props => (
      (!props.currentUser) ? (
-      <Component {...props}/>
+       <Component {...props} />
     ) : (
       <Redirect to={{
         pathname: '/login',
         state: { from: props.location }
-      }}/>
+      }} />
     )
-  )}/>
+  )} />
 )
 
 ReactDOM.render(
@@ -38,7 +38,7 @@ ReactDOM.render(
       <div>
         <Route exact path='/' component={App} />
         <Route exact path='/login' component={LoginPage} />
-        <PrivateRoute path='/testing' component={Test}/>
+        <PrivateRoute path='/testing' component={Test} />
       </div>
     </Router>
   </Provider>,

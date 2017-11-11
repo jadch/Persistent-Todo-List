@@ -5,10 +5,10 @@ import SignOutComponent from './SignOutComponent'
 
 class AuthButton extends React.Component {
   render () {
-  let user = this.props.currentUser
-  let HTMLify = user ? <SignOutComponent /> : <SignInComponent />
+    let user = this.props.currentUser
+    let HTMLify = user ? <SignOutComponent /> : <SignInComponent />
 
-  return(
+    return (
       <div>
         {HTMLify}
       </div>
