@@ -5,6 +5,12 @@ class UserBar extends React.Component {
   render () {
     let user = this.props.currentUser
 
+    if (!user) {
+      return (
+        <div />
+      )
+    }
+
     return (
       <div>
         <p>Hello, {user.displayName}!</p>
