@@ -94,8 +94,14 @@ Body {
   align-items: center;
 }
 
-.SignOutComponent {
+.SignOutComponent, .SignInComponent {
   margin-left: 10px;
+}
+
+.welcome {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
 }
 
 /* Styling a fixed-position navbar */
@@ -111,6 +117,13 @@ Body {
   margin-top: 100px;
 }
 
+.AllDone h1 {
+  width: 420px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+  margin: 50px auto 15px auto;
+}
 
 .TaskList, .CompleteTaskList {
   list-style: none;
@@ -169,7 +182,7 @@ Body {
   border-radius: 5%;
 }
 
-.SignOutComponent button {
+.SignOutComponent button, .SignInComponent button {
   padding: 5px;
   border: none;
   border-radius: 5%;
