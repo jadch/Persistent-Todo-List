@@ -12,7 +12,7 @@ class UserBar extends React.Component {
     }
 
     return (
-      <div>
+      <div className='welcome'>
         <p>Hello, {user.displayName}!</p>
       </div>
     )

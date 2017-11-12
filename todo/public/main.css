@@ -98,6 +98,12 @@ Body {
   margin-left: 10px;
 }
 
+.welcome {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
 /* Styling a fixed-position navbar */
 .NavBar {
   margin-bottom: auto;
