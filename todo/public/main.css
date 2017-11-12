@@ -94,7 +94,7 @@ Body {
   align-items: center;
 }
 
-.SignOutComponent {
+.SignOutComponent, .SignInComponent {
   margin-left: 10px;
 }
 
@@ -176,7 +176,7 @@ Body {
   border-radius: 5%;
 }
 
-.SignOutComponent button {
+.SignOutComponent button, .SignInComponent button {
   padding: 5px;
   border: none;
   border-radius: 5%;
